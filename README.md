@@ -1,4 +1,4 @@
-# asdf-universal-ctags [![GitHub Actions Status:Commit](https://github.com/ompugao/mise-universal-ctags/workflows/Commit%20workflow/badge.svg)](https://github.com/tsuyoshicho/asdf-vim/actions?query=workflow%3A%22Commit+workflow%22) [![GitHub Actions Status:Schedule](https://github.com/tsuyoshicho/asdf-vim/workflows/Schedule%20workflow/badge.svg)](https://github.com/tsuyoshicho/asdf-vim/actions?query=workflow%3A%22Schedule+workflow%22)
+# asdf-universal-ctags [![GitHub Actions Status:Commit](https://github.com/ompugao/mise-universal-ctags/workflows/Commit%20workflow/badge.svg)](https://github.com/ompugao/mise-universal-ctags/actions?query=workflow%3A%22Commit+workflow%22) [![GitHub Actions Status:Schedule](https://github.com/ompugao/mise-universal-ctags/workflows/Schedule%20workflow/badge.svg)](https://github.com/ompugao/mise-universal-ctags/actions?query=workflow%3A%22Schedule+workflow%22)
 
 Universal-ctags plugin for [asdf](https://github.com/asdf-vm/asdf) version manager.
 

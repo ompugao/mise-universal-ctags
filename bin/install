@@ -98,4 +98,4 @@ get_valid_concurrency() {
   return
 }
 
-install_vim "${ASDF_INSTALL_VERSION}" "${ASDF_INSTALL_PATH}" "${ASDF_CONCURRENCY:-1}"
+install_universal_ctags "${ASDF_INSTALL_VERSION}" "${ASDF_INSTALL_PATH}" "${ASDF_CONCURRENCY:-1}"
