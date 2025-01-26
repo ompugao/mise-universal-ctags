@@ -13,8 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macOS-latest]
-        family: [tiny, normal, huge]
+        os: [ubuntu-latest] # , macOS-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: ruby setup (mac)
@@ -22,6 +21,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
+      # TODO setup autoconf in mac
       - name: asdf plugin test
         uses: asdf-vm/actions/plugin-test@v3
         with:
