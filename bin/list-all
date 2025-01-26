@@ -8,7 +8,7 @@ function sort_versions() {
 
 # Fetch all tag names, and get only second column. Then remove all unnecessary characters.
 list_of_versions=$(
-  git ls-remote --heads --tags https://github.com/vim/vim.git \
+  git ls-remote --heads --tags https://github.com/universal-ctags/ctags.git \
   | awk '!/([{][}])/ {print $2}' | awk 'gsub("(refs/tags/)|(v)", "")' \
   | sort_versions
 )

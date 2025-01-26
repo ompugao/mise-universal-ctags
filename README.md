@@ -1,8 +1,8 @@
-# asdf-vim [![GitHub Actions Status:Commit](https://github.com/tsuyoshicho/asdf-vim/workflows/Commit%20workflow/badge.svg)](https://github.com/tsuyoshicho/asdf-vim/actions?query=workflow%3A%22Commit+workflow%22) [![GitHub Actions Status:Schedule](https://github.com/tsuyoshicho/asdf-vim/workflows/Schedule%20workflow/badge.svg)](https://github.com/tsuyoshicho/asdf-vim/actions?query=workflow%3A%22Schedule+workflow%22)
+# asdf-universal-ctags [![GitHub Actions Status:Commit](https://github.com/ompugao/mise-universal-ctags/workflows/Commit%20workflow/badge.svg)](https://github.com/tsuyoshicho/asdf-vim/actions?query=workflow%3A%22Commit+workflow%22) [![GitHub Actions Status:Schedule](https://github.com/tsuyoshicho/asdf-vim/workflows/Schedule%20workflow/badge.svg)](https://github.com/tsuyoshicho/asdf-vim/actions?query=workflow%3A%22Schedule+workflow%22)
 
-Vim plugin for [asdf](https://github.com/asdf-vm/asdf) version manager.
+Universal-ctags plugin for [asdf](https://github.com/asdf-vm/asdf) version manager.
 
-Forked from [srivathsanmurali/asdf-cmake](https://github.com/srivathsanmurali/asdf-cmake).
+Forked from [mise-plugins/mise-vim](https://github.com/mise-plugins/mise-vim).
 
 ## Usage
 
@@ -11,25 +11,18 @@ Forked from [srivathsanmurali/asdf-cmake](https://github.com/srivathsanmurali/as
 The plugin can be install using the following command.
 
 ```sh
-asdf plugin-add vim
-# or asdf plugin-add vim https://github.com/tsuyoshicho/asdf-vim.git
-asdf install vim <version>
+asdf plugin-add ctags https://github.com/ompugao/mise-universal-ctags.git
+asdf install ctags <version>
 ```
-
-### Installation Variable
-
-- `ASDF_VIM_TYPE`: vim install type [`tiny` - `huge`]. default `huge`.
-- `ASDF_VIM_CONFIG`: vim install configure arguments. default, see [install](bin/install) script.
-
 ### .tool-versions file
 
 You can specify the version to install with a line like so in your .tool-versions file:
-vim <version>
+ctags <version>
 
 ### Using the CLI
 
-You can then set the local/global version to your new version with `asdf local vim <version>` or `asdf global vim <version>`.
+You can then set the local/global version to your new version with `asdf local ctags <version>` or `asdf global ctags <version>`.
 
 ## Use
 
-Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install & manage versions of Vim.
+Check [asdf](https://github.com/asdf-vm/asdf) readme for instructions on how to install & manage versions of ctags.

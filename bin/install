@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-install_vim() {
+install_universal_ctags() {
   local version
   local install_path
   local concurrency
@@ -8,27 +8,11 @@ install_vim() {
   install_path=$2
   concurrency=$(get_valid_concurrency "$3")
 
-  echo "Install Vim version:${version}, path:${install_path}, build concurrency:${concurrency}"
-
-  local default_config="\
---with-tlib=ncurses \
---with-compiledby=asdf \
---enable-multibyte \
---enable-cscope \
---enable-terminal \
---enable-perlinterp \
---enable-rubyinterp \
---enable-python3interp \
---enable-luainterp \
---enable-gui=no \
---without-x"
-
-  local type="${ASDF_VIM_TYPE:-huge}"
-  local config="${ASDF_VIM_CONFIG:-${default_config}}"
+  echo "Install Universal Ctags version:${version}, path:${install_path}, build concurrency:${concurrency}"
 
   local tmp_download_dir
   if [ "${TMPDIR}" = "" ]; then
-    tmp_download_dir=$(mktemp -d -t asdf_vim_build_XXXXXX)
+    tmp_download_dir=$(mktemp -d -t asdf_universal_ctags_build_XXXXXX)
   else
     tmp_download_dir="${TMPDIR}"
   fi
@@ -48,9 +32,9 @@ install_vim() {
     fi
 
     tar -xvf "${source_path}" -C "${tmp_download_dir}" || exit 1
-    cd "${tmp_download_dir}/vim-${version}"  || exit 1
+    cd "${tmp_download_dir}/ctags-${version}"  || exit 1
 
-    local configure_option="--prefix=${install_path} --with-features=${type} ${config}"
+    local configure_option="--prefix=${install_path}"
     # shellcheck disable=SC2086
     echo 'configure option: ' $configure_option || exit 1
     # shellcheck disable=SC2086
@@ -82,7 +66,7 @@ get_download_file_path() {
   version=$1
   tmp_download_dir=$2
 
-  echo "${tmp_download_dir}/vim-${version}.tar.gz"
+  echo "${tmp_download_dir}/universal-ctags-${version}.tar.gz"
   return
 }
 
@@ -92,10 +76,10 @@ get_download_url() {
 
   if [[ "${version}" =~ ^[0-9]+\.* ]] ; then
     # if version is a release number, prepend v
-    echo "https://github.com/vim/vim/archive/v${version}.tar.gz"
+    echo "https://github.com/universal-ctags/ctags/archive/v${version}.tar.gz"
   else
     # otherwise it can be a branch name or commit sha
-    echo "https://github.com/vim/vim/archive/${version}.tar.gz"
+    echo "https://github.com/universal-ctags/ctags/archive/${version}.tar.gz"
   fi
   return
 }
